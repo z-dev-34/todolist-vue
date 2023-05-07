@@ -1,6 +1,7 @@
 import {
     createStore
 } from 'vuex';
+import { IState } from '../types/stateStore';
 
 export default createStore({
     state: {
@@ -17,14 +18,14 @@ export default createStore({
         ]
     },
     getters: {
-        allTodos(state) {
+        allTodos(state:IState) {
             return state.todos
         },
-        doneTodos(state) {
-            return state.todos.filter(todo => todo.done)
+        doneTodos(state:any) {
+            return state.todos.filter((todo:any) => todo.done)
         },
-        numberOfDoneTodos(state) {
-            return state.todos.reduce((initValue, todo) => {
+        numberOfDoneTodos(state:any) {
+            return state.todos.reduce((initValue:number, todo:any) => {
                 if (todo.done) {
                     initValue++
                 }

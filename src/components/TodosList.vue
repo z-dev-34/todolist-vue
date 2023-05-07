@@ -4,8 +4,7 @@
   <ul v-for="todo in todos" :key="todo.id">
     <li>{{ todo.title }}</li>
   </ul>
-</div>  
-
+</div>
 </template>
 <script setup lang="ts">
 import {computed} from 'vue';
